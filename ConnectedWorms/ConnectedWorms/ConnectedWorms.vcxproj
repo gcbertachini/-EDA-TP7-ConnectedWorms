@@ -115,15 +115,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Communication.cpp" />
     <ClCompile Include="event_queue.cpp" />
     <ClCompile Include="FrontEnd.cpp" />
     <ClCompile Include="FSM_Server.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="netData.cpp" />
+    <ClCompile Include="parseCmdLine.cpp" />
+    <ClCompile Include="parser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Communication.h" />
     <ClInclude Include="event_queue.h" />
     <ClInclude Include="FrontEnd.h" />
     <ClInclude Include="FSM_Server.h" />
+    <ClInclude Include="General.h" />
+    <ClInclude Include="netData.h" />
+    <ClInclude Include="netFunctions.h" />
+    <ClInclude Include="parseCmdLine.h" />
+    <ClInclude Include="parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

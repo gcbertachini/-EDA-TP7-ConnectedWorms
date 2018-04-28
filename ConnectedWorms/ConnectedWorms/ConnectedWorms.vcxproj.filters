@@ -27,6 +27,18 @@
     <ClCompile Include="FSM_Server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EventManagement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scenario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="worm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="event_queue.h">
@@ -38,5 +50,103 @@
     <ClInclude Include="FSM_Server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EventManagement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="general.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scenario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="worm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="mountains.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Scenario.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wjump-F10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F11.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F12.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F13.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F14.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="wwalk-F15.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

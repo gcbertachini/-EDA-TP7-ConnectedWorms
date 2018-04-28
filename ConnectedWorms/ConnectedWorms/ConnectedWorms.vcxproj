@@ -115,15 +115,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EventManagement.cpp" />
     <ClCompile Include="event_queue.cpp" />
     <ClCompile Include="FrontEnd.cpp" />
     <ClCompile Include="FSM_Server.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="position.cpp" />
+    <ClCompile Include="scenario.cpp" />
+    <ClCompile Include="worm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EventManagement.h" />
     <ClInclude Include="event_queue.h" />
     <ClInclude Include="FrontEnd.h" />
     <ClInclude Include="FSM_Server.h" />
+    <ClInclude Include="general.h" />
+    <ClInclude Include="position.h" />
+    <ClInclude Include="scenario.h" />
+    <ClInclude Include="worm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="mountains.png" />
+    <Image Include="Scenario.png" />
+    <Image Include="wjump-F1.png" />
+    <Image Include="wjump-F10.png" />
+    <Image Include="wjump-F2.png" />
+    <Image Include="wjump-F3.png" />
+    <Image Include="wjump-F4.png" />
+    <Image Include="wjump-F5.png" />
+    <Image Include="wjump-F6.png" />
+    <Image Include="wjump-F7.png" />
+    <Image Include="wjump-F8.png" />
+    <Image Include="wjump-F9.png" />
+    <Image Include="wwalk-F1.png" />
+    <Image Include="wwalk-F10.png" />
+    <Image Include="wwalk-F11.png" />
+    <Image Include="wwalk-F12.png" />
+    <Image Include="wwalk-F13.png" />
+    <Image Include="wwalk-F14.png" />
+    <Image Include="wwalk-F15.png" />
+    <Image Include="wwalk-F2.png" />
+    <Image Include="wwalk-F3.png" />
+    <Image Include="wwalk-F4.png" />
+    <Image Include="wwalk-F5.png" />
+    <Image Include="wwalk-F6.png" />
+    <Image Include="wwalk-F7.png" />
+    <Image Include="wwalk-F8.png" />
+    <Image Include="wwalk-F9.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

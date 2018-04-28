@@ -21,9 +21,9 @@
 ******************************************************************************/
 
 
-typedef enum { END_OF_TABLE, MOVE_RECEIVED, MOVE_SENT, ACK, TIME_OUT , 
+typedef enum { END_OF_TABLE, MOVE, ACK, TIME_OUT , 
 			   TIME_OUT_2, QUIT, ERROR1 ,GARBAGE , RESET , I_AM_READY,
-			    INVALID_ACKCODE,VALID_ACKCODE, END_COMMUNICATION } event_t;
+			    INVALID_ACKCODE,VALID_ACKCODE, START_COMMUNICATION } event_t;
 
 typedef enum { CLEAR, FETCH }mode_t;//typedef for the function get_ev
 

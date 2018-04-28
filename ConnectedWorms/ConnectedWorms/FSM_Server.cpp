@@ -63,13 +63,9 @@ static void dummy_printf(mode_t mode, event_t actual_event);
 //Every state is represent by an array
 extern edge_t Initiating_state[];
 extern edge_t Waiting_for_ClientOK_state[];
-extern edge_t Finishing_configuration[];
-extern edge_t Looping_state[];
-extern edge_t Waiting_to_send_ACK_state[];
+extern edge_t Waiting_for_Event_state[];
 extern edge_t Waiting_for_ACK_state[];
-extern edge_t Resending_MOVE[];
-extern edge_t Analyzing_ACK[];
-extern edge_t Sending_ERROR[];
+extern edge_t Sending_ERROR_state[];
 
 
 /*******************************************************************************
@@ -81,80 +77,49 @@ extern edge_t Sending_ERROR[];
 
  edge_t Initiating_state[]=
 {
-	{I_AM_READY, Waiting_for_ClientOK_state, do_nothing},
-	{ GARBAGE ,Sending_ERROR, do_nothing },
+	{ START_COMMUNICATION, Waiting_for_ClientOK_state, do_nothing},
+	{ QUIT, Waiting_for_ACK_state, do_nothing },
+	{ ERROR1, Sending_ERROR_state, do_nothing },
 	{ END_OF_TABLE,Initiating_state, do_nothing }
 };
 
 
  edge_t Waiting_for_ClientOK_state[]=
 {
-	{ I_AM_READY, Finishing_configuration, do_nothing },
+	{ I_AM_READY, Waiting_for_Event_state, do_nothing },
+	{ QUIT, Waiting_for_ACK_state, do_nothing },
+	{ ERROR1, Sending_ERROR_state, do_nothing },
 	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
 	{ END_OF_TABLE,Waiting_for_ClientOK_state, do_nothing }
 };
 
- edge_t Finishing_configuration[]=
+ edge_t Waiting_for_Event_state[]=
 {
-	{ ACK, Looping_state, do_nothing },
-	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
-	{ END_OF_TABLE,Finishing_configuration, do_nothing }
-};
-
- edge_t Looping_state[]=
-{
-	{ MOVE_RECEIVED, Waiting_to_send_ACK_state, do_nothing },
-	{ MOVE_SENT, Waiting_for_ACK_state, do_nothing },
+	{ MOVE, Waiting_for_ACK_state, do_nothing },
 	{ QUIT, Waiting_for_ACK_state, do_nothing },
+    { ERROR1, Sending_ERROR_state, do_nothing },
 	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
-	{ END_OF_TABLE,Looping_state, do_nothing }
-};
-
- edge_t Waiting_to_send_ACK_state[]=
-{
-	{ ACK, Looping_state, do_nothing },
-	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
-	{ END_OF_TABLE,Waiting_to_send_ACK_state, do_nothing }
+	{ END_OF_TABLE,Waiting_for_Event_state, do_nothing }
 };
 
  edge_t Waiting_for_ACK_state[]=
 {
-	{ TIME_OUT_2, Sending_ERROR, do_nothing },
-	{ TIME_OUT, Resending_MOVE, do_nothing },
-	{ ACK, Analyzing_ACK, do_nothing },
+	{ TIME_OUT, Waiting_for_ACK_state, do_nothing },
+	{ VALID_ACKCODE, Waiting_for_Event_state, do_nothing },
+	{ INVALID_ACKCODE, Sending_ERROR_state, do_nothing },
+	{ TIME_OUT_2, Sending_ERROR_state, do_nothing },
+	{ QUIT, Waiting_for_ACK_state, do_nothing },
+	{ ERROR1, Sending_ERROR_state, do_nothing },
 	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
 	{ END_OF_TABLE,Waiting_for_ACK_state, do_nothing }
 };
 
- edge_t Resending_MOVE[]=
-{
-	{ MOVE_SENT, Waiting_for_ACK_state, do_nothing },
-	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
-	{ END_OF_TABLE,Resending_MOVE, do_nothing }
-};
 
- edge_t Analyzing_ACK[] =
+ edge_t Sending_ERROR_state[]=
 {
-	{ INVALID_ACKCODE, Waiting_for_ACK_state, do_nothing },
-	{ VALID_ACKCODE,Looping_state ,do_nothing},
-	{ END_COMMUNICATION, Analyzing_ACK, do_nothing },
+	{ ERROR1, Sending_ERROR_state, do_nothing },
 	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
-	{ END_OF_TABLE,Analyzing_ACK, do_nothing }
-};
-
- edge_t Sending_ERROR[]=
-{
-	{ ERROR1, Sending_ERROR, do_nothing },
-	{ RESET, Initiating_state, do_nothing },
-	{ GARBAGE ,Sending_ERROR, do_nothing },
-	{ END_OF_TABLE,Sending_ERROR, do_nothing }
+	{ END_OF_TABLE,Sending_ERROR_state, do_nothing }
 };
 
 
